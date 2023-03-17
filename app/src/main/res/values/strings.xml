@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">EasyTravel</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="title_arrival">Arrival</string>
+    <string name="title_departure">Departure</string>
+    <string name="title_flight_ticket">flightTicket</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="arrival">Arrival</string>
+    <string name="departure">Departure</string>
+    <string name="flight_ticket">Flight Ticket</string>
+    <string name="save">Save</string>
+    <string name="todo">toDo</string>
+    <string name="hotel">hotel</string>
+    <string name="flight">flight</string>
+    <string name="home">home</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hotel_info">hotel_info</string>
+    <string name="hotel_ticket">hotel_ticket</string>
+    <string name="log_out">log out</string>
+</resources>

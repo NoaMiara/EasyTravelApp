@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_add_flight.xml"
+    app:startDestination="@+id/navigation_arrival">
+
+
+
+    <fragment
+        android:id="@+id/navigation_arrival"
+        android:name="com.app.easy.travel.add.flight.ArrivalFragment"
+        android:label="@string/title_arrival"
+        tools:layout="@layout/fragment_arrival" />
+    <fragment
+        android:id="@+id/navigation_departure"
+        android:name="com.app.easy.travel.add.flight.DepartureFragment"
+        android:label="@string/title_departure"
+        tools:layout="@layout/fragment_departure" />
+
+    <fragment
+        android:id="@+id/navigation_flight_ticket"
+        android:name="com.app.easy.travel.add.flight.FlightTicketFragment"
+        android:label="@string/title_flight_ticket"
+        tools:layout="@layout/fragment_flight_ticket" />
+
+    <fragment
+        android:id="@+id/navigation_save_flight"
+        android:name="com.app.easy.travel.add.flight.SaveFlightFragment"
+        android:label="@string/save"
+        tools:layout="@layout/fragment_save_flight" />
+
+</navigation>

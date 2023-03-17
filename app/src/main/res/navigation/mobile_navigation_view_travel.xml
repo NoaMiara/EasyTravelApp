@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_view_travel.xml"
+    app:startDestination="@+id/navigation_home"
+    >
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.app.easy.travel.view.home.HomeTravelFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home_travel" />
+    <fragment
+        android:id="@+id/navigation_flight"
+        android:name="com.app.easy.travel.view.flight.FlightFragment"
+        android:label="Flight"
+        tools:layout="@layout/fragment_flight" />
+
+    <fragment
+        android:id="@+id/navigation_hotels"
+        android:name="com.app.easy.travel.view.hotel.HotelFragment"
+        android:label="Hotel"
+        tools:layout="@layout/fragment_hotel" />
+
+    <fragment
+        android:id="@+id/navigation_to_do_list"
+        android:name="com.app.easy.travel.view.toDo.ToDoFragment"
+        android:label="To Do"
+        tools:layout="@layout/fragment_to_do" />
+
+</navigation>

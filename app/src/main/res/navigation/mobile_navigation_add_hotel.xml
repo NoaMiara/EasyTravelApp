@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_add_hotel.xml"
+    app:startDestination="@+id/navigation_hotel_info">
+
+    <fragment
+        android:id="@+id/navigation_hotel_info"
+        android:name="com.app.easy.travel.add.hotel.HotelInfoFragment"
+        android:label="Hotel Information"
+        tools:layout="@layout/fragment_hotel_info" />
+
+    <fragment
+        android:id="@+id/navigation_hotel_ticket"
+        android:name="com.app.easy.travel.add.hotel.HotelTicketFragment"
+        android:label="Hotel Ticket"
+        tools:layout="@layout/fragment_hotel_ticket" />
+    <fragment
+        android:id="@+id/navigation_save_hotel"
+        android:name="com.app.easy.travel.add.hotel.SaveHotelFragment"
+        android:label="@string/save"
+        tools:layout="@layout/fragment_save_hotel" />
+
+
+</navigation>

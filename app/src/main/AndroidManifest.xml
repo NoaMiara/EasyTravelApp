@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.app.easy.travel">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher_im"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_im"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EasyTravel"
+        tools:targetApi="31" >
+    <activity
+        android:name="com.app.easy.travel.add.tasks.AddTaskActivity"
+        android:exported="false"
+        />
+    <activity
+        android:name="com.app.easy.travel.view.hotel.FileHotelActivity"
+        android:exported="false" />
+    <activity
+        android:name="com.app.easy.travel.add.hotel.AddHotelActivity"
+        android:exported="true" />
+    <activity
+        android:name=".login.LoginActivity"
+        android:exported="false" />
+    <activity
+        android:name=".login.RegisterActivity"
+        android:exported="false" />
+    <activity
+        android:name="com.app.easy.travel.view.flight.FileFlightActivity"
+        android:exported="false" />
+    <activity
+        android:name="com.app.easy.travel.view.MainViewActivity"
+        android:exported="true" />
+    <activity
+        android:name="com.app.easy.travel.add.flight.AddFlightActivity"
+        android:exported="true" />
+    <activity
+        android:name="com.app.easy.travel.add.MainAddActivity"
+        android:exported="true"
+        android:parentActivityName=".main.HomeActivity"
+        />
+    <activity
+        android:name=".main.HomeActivity"
+        android:exported="true"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.EasyTravel.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+</application>
+
+</manifest>

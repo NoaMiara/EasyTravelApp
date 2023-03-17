@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:color="@color/black"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/navigation_flight"
+        android:color="@color/black"
+        android:icon="@drawable/ic_baseline_flight_24"
+        android:title="@string/flight" />
+
+    <item
+        android:id="@+id/navigation_hotels"
+        android:icon="@drawable/ic_baseline_hotel_24"
+        android:title="@string/hotel" />
+
+    <item
+        android:id="@+id/navigation_to_do_list"
+        android:icon="@drawable/ic_baseline_checklist_24"
+        android:title="@string/todo" />
+
+
+</menu>

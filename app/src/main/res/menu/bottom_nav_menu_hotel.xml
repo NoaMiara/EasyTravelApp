@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_hotel_info"
+        android:icon="@drawable/ic_baseline_hotel_24"
+        android:title="Hotel Info" />
+
+    <item
+        android:id="@+id/navigation_hotel_ticket"
+        android:icon="@drawable/ic_baseline_photo_camera_24"
+        android:title="Hotel Ticket" />
+
+    <item
+        android:id="@+id/navigation_save_hotel"
+        android:color="@color/black"
+        android:icon="@drawable/ic_baseline_save_24"
+        android:title="@string/save" />
+</menu>
