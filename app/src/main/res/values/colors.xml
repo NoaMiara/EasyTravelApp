@@ -9,7 +9,9 @@
     <color name="teal_200">#94B49F</color>
 
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="black1">#FF000000</color>
+    <color name="black">#DA000000</color>
+
     <color name="white">#FFFFFFFF</color>
 
     <color name="WHITE_BLUE">#4F80E2</color>
