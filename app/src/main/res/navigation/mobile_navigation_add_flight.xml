@@ -10,7 +10,7 @@
     <fragment
         android:id="@+id/navigation_arrival"
         android:name="com.app.easy.travel.add.flight.ArrivalFragment"
-        android:label="@string/title_arrival"
+        android:label="Arrival"
         tools:layout="@layout/fragment_arrival" />
     <fragment
         android:id="@+id/navigation_departure"

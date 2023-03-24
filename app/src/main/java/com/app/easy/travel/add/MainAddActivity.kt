@@ -159,7 +159,7 @@ class MainAddActivity : AppCompatActivity(), View.OnClickListener,
 
     private fun displayFormattedDate(time:Long){
 
-        binding.date.text =format.format(time)
+        binding.date.text = format.format(time)
 
     }
 

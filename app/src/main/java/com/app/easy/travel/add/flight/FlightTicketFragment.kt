@@ -39,7 +39,7 @@ import java.util.*
 class FlightTicketFragment : Fragment(), RecyclerViewInterface {
 
     private var _binding: FragmentFlightTicketBinding? = null
-    private var saveImageToInternalStorage: Uri? = null
+    //private var saveImageToInternalStorage: Uri? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -130,7 +130,7 @@ class FlightTicketFragment : Fragment(), RecyclerViewInterface {
                     val uri = data.data
                     try {
                         val selectedImageBitmap = MediaStore.Images.Media.getBitmap(requireActivity().contentResolver,uri)
-                        saveImageToInternalStorage = saveImageRoInternalStorage(selectedImageBitmap)
+                        //saveImageToInternalStorage = saveImageRoInternalStorage(selectedImageBitmap)
                         saveImageOnObj(selectedImageBitmap)
                         imageUpdate()
                     } catch (e: IOException) {
@@ -139,7 +139,7 @@ class FlightTicketFragment : Fragment(), RecyclerViewInterface {
                 }
             } else if (requestCode == CAMERA) {
                 val pic: Bitmap = data!!.extras!!.get("data") as Bitmap
-                saveImageToInternalStorage = saveImageRoInternalStorage(pic)
+                //saveImageToInternalStorage = saveImageRoInternalStorage(pic)
                 saveImageOnObj(pic)
                 imageUpdate()
 
@@ -166,8 +166,6 @@ class FlightTicketFragment : Fragment(), RecyclerViewInterface {
                     val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
                     startActivityForResult(cameraIntent, CAMERA)
                 }
-
-
             }
 
             override fun onPermissionRationaleShouldBeShown(
@@ -235,24 +233,24 @@ class FlightTicketFragment : Fragment(), RecyclerViewInterface {
 
     }
 
-    private fun saveImageRoInternalStorage(bitmap: Bitmap): Uri {
-        val wrapper = ContextWrapper(requireActivity())
-        var file = wrapper.getDir(IMAGE_DIRECTORY, Context.MODE_PRIVATE)
-        file = File(file, "${UUID.randomUUID()}.jpg")
-
-        try {
-            val stream: OutputStream = FileOutputStream(file)
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
-            stream.flush()
-            stream.close()
-
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        return Uri.parse(file.absolutePath)
-
-
-    }
+//    private fun saveImageRoInternalStorage(bitmap: Bitmap): Uri {
+//        val wrapper = ContextWrapper(requireActivity())
+//        var file = wrapper.getDir(IMAGE_DIRECTORY, Context.MODE_PRIVATE)
+//        file = File(file, "${UUID.randomUUID()}.jpg")
+//
+//        try {
+//            val stream: OutputStream = FileOutputStream(file)
+//            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
+//            stream.flush()
+//            stream.close()
+//
+//        } catch (e: IOException) {
+//            e.printStackTrace()
+//        }
+//        return Uri.parse(file.absolutePath)
+//
+//
+//    }
 
     override fun onItemClick(delete: Boolean, position: Int) {
         alertDialogForImageDelete(position)

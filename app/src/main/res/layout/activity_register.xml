@@ -7,18 +7,6 @@
     tools:context=".login.RegisterActivity">
 
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Register"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline43"
-        app:layout_constraintEnd_toStartOf="@+id/guideline36"
-        app:layout_constraintStart_toStartOf="@+id/guideline35"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_email"
         android:layout_width="0dp"
@@ -123,7 +111,7 @@
         android:id="@+id/btn_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:outlineSpotShadowColor="@color/btn"
+        android:outlineSpotShadowColor="@color/white"
         app:cardBackgroundColor="@color/back"
         app:cardCornerRadius="50dp"
         app:cardElevation="24dp"
@@ -194,14 +182,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.56" />
+        app:layout_constraintGuide_percent="0.74" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline48"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.72"/>
+        app:layout_constraintGuide_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline49"
