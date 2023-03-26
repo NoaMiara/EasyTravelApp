@@ -1,4 +1,4 @@
-# EasyTravelApp
+# Easy Travel
 
 
 Android application that implements ***. 
