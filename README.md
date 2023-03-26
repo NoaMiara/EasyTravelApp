@@ -29,22 +29,22 @@ It is suitable for anyone booking a flight or vacation who wants a more convenie
 ## What does it contain?
 Easy Travel contains the following features: </br>
 
-*User login and new user registration </br>
-*Personal management for each trip </br>
-*Tracking of data before and during the trip, such as flight details, hotel details, tasks, etc. </br>
-*Concentration of travel expenses </br>
-*Concentration of travel documents </br>
+* User login and new user registration </br>
+* Personal management for each trip </br>
+* Tracking of data before and during the trip, such as flight details, hotel details, tasks, etc. </br>
+* Concentration of travel expenses </br>
+* Concentration of travel documents </br>
 
 ## Screens
 The Easy Travel app contains the following main screens: </br>
 
-1.LoginActivity - the login screen that allows users to enter a username and password or register a new user. </br>
-2.HomeActivity - a list of the user's previous trips and the option to create a new trip. </br>
-3.MainAddActivity - the screen where users can give a name and date for their trip. It contains four buttons - add flights, add hotels, add tasks, and save travel - each of which leads to a suitable activity. </br>
-4.AddFlightActivity - contains four fragments - outbound flight details, landing, adding a flight ticket, and saving. Users can add another flight from this screen. </br>
-5.AddHotelActivity - contains three fragments - hotel details, adding a picture of the hotel details, and saving the hotel. Users can add another hotel from this screen. </br>
-6.AddTaskActivity - contains a list of tasks to do, adding tasks, and an option to mark completed tasks. </br>
-7.AllFlightsActivity - displays all the details of the flights the user has entered. Users can view, delete, and re-add flights from this screen. </br>
+1. LoginActivity - the login screen that allows users to enter a username and password or register a new user. </br>
+2. HomeActivity - a list of the user's previous trips and the option to create a new trip. </br>
+3. MainAddActivity - the screen where users can give a name and date for their trip. It contains four buttons - add flights, add hotels, add tasks, and save travel - each of which leads to a suitable activity. </br>
+4. AddFlightActivity - contains four fragments - outbound flight details, landing, adding a flight ticket, and saving. Users can add another flight from this screen. </br>
+5. AddHotelActivity - contains three fragments - hotel details, adding a picture of the hotel details, and saving the hotel. Users can add another hotel from this screen. </br>
+6. AddTaskActivity - contains a list of tasks to do, adding tasks, and an option to mark completed tasks. </br>
+7. AllFlightsActivity - displays all the details of the flights the user has entered. Users can view, delete, and re-add flights from this screen. </br>
 
 ## Database
 Easy Travel uses Firebase for saving user data and storing all trip information. </br>
