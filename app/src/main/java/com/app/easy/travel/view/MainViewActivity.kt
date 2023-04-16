@@ -36,7 +36,8 @@ class MainViewActivity : AppCompatActivity() {
                 R.id.navigation_home,
                 R.id.navigation_flight,
                 R.id.navigation_hotels,
-                R.id.navigation_to_do_list
+                R.id.navigation_to_do_list,
+                R.id.navigation_camera
             )
         )
 
@@ -45,7 +46,7 @@ class MainViewActivity : AppCompatActivity() {
 
     }
 
-        private fun actionBarManager() {
+    private fun actionBarManager() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 

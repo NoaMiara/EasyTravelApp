@@ -14,29 +14,34 @@ import com.google.firebase.database.ValueEventListener
 import com.app.easy.travel.main.HomeActivity
 
 class LoginActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Inflate the layout for this activity using View Binding
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set onClickListener for Sign In button
         binding.btnSignIn.setOnClickListener {
-            checkIfFieldsEmpty()
-            checkInRepository()
+            checkIfFieldsEmpty()   // Check if fields are empty
+            checkInRepository()    // Check login credentials in database
         }
+
+        // Set onClickListener for Register Now button
         binding.registerNow.setOnClickListener {
+            // Launch the RegisterActivity and finish the current activity
             Intent(this, RegisterActivity::class.java).apply {
                 startActivity(this)
                 finish()
             }
-
         }
-
-
     }
 
     private fun checkIfFieldsEmpty() {
+        // Check if email and password fields are empty, show a toast message if any field is empty
         when {
             binding.etTextLoginEmail.text?.isEmpty() == true -> Toast.makeText(
                 this,
@@ -49,27 +54,27 @@ class LoginActivity : AppCompatActivity() {
                 "Please write your Password",
                 Toast.LENGTH_SHORT
             ).show()
-
-
         }
     }
 
     private fun checkInRepository() {
+        // Check if login credentials match in the database
         FirebaseDatabase.getInstance().reference.addListenerForSingleValueEvent(object :
             ValueEventListener {
 
             override fun onDataChange(snapshot: DataSnapshot) {
+                // Get the entered email, replace any "." character in the email address
                 var email = binding.etTextLoginEmail.text.toString()
                 email = email.replace(".", "")
 
+                // Check if user exists in the database, if yes, check the entered password
                 if (snapshot.child(USERS).child(email).exists()) {
-
                     val user =
                         snapshot.child(USERS).child(email).child(
                             USER
                         )
                             .getValue(User::class.java)
-
+                    // If the entered password matches the password in the database, create user preferences and finish the login process
                     if (user?.password!!.equals(binding.etTextPassword.text.toString())) {
                         Toast.makeText(
                             this@LoginActivity,
@@ -77,36 +82,26 @@ class LoginActivity : AppCompatActivity() {
                             Toast.LENGTH_SHORT
                         ).show()
                         createPreferences(user)
-
                     } else {
+                        // If the entered password does not match the password in the database, show an error message
                         Toast.makeText(
                             this@LoginActivity,
                             "The password is incorrect",
                             Toast.LENGTH_SHORT
                         ).show()
-
                     }
-
-
                 } else {
-
+                    // If the user does not exist in the database, show an error message
                     Toast.makeText(
                         this@LoginActivity,
                         "The email is incorrect",
                         Toast.LENGTH_SHORT
                     ).show()
-
                 }
-
-
             }
-
-
             override fun onCancelled(error: DatabaseError) {
-
+                // Handle any database error
             }
-
-
         })
     }
 

@@ -1,5 +1,6 @@
 package com.app.easy.travel.repository
 
+import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.app.easy.travel.helpers.IMAGES
@@ -91,6 +92,7 @@ class TravelRepository {
         }
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun removeFlightFromStorage(flights: MutableList<Flight>, userEmail:String) {
         for (flight in flights) {
             val files = flight.file

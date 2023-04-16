@@ -23,6 +23,12 @@
         tools:layout="@layout/fragment_hotel" />
 
     <fragment
+        android:id="@+id/navigation_camera"
+        android:name="com.app.easy.travel.view.camera.CameraFragment"
+        android:label="Camera"
+        tools:layout="@layout/fragment_camera" />
+
+    <fragment
         android:id="@+id/navigation_to_do_list"
         android:name="com.app.easy.travel.view.toDo.ToDoFragment"
         android:label="To Do"

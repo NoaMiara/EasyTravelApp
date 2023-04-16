@@ -19,6 +19,11 @@
         android:title="@string/hotel" />
 
     <item
+        android:id="@+id/navigation_camera"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="camera" />
+
+    <item
         android:id="@+id/navigation_to_do_list"
         android:icon="@drawable/ic_baseline_checklist_24"
         android:title="@string/todo" />

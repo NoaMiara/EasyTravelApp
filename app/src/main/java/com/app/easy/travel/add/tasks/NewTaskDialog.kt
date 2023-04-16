@@ -39,6 +39,7 @@ class NewTaskDialog(private var task: Task?, private var isActivity: Boolean) : 
 
         taskViewModel = if (isActivity) ViewModelProvider(requireActivity())[TaskViewModel::class.java]
         else ViewModelProvider(requireParentFragment())[TaskViewModel::class.java]
+
         binding.btnSave.setOnClickListener {
             saveAction()
         }
@@ -57,6 +58,4 @@ class NewTaskDialog(private var task: Task?, private var isActivity: Boolean) : 
         binding.edTask.setText("")
         dismiss()
     }
-
-
 }
