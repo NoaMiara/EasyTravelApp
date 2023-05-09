@@ -37,7 +37,8 @@ class MainViewActivity : AppCompatActivity() {
                 R.id.navigation_flight,
                 R.id.navigation_hotels,
                 R.id.navigation_to_do_list,
-                R.id.navigation_camera
+                R.id.navigation_camera,
+                //R.id.navigation_flight_detels_list
             )
         )
 

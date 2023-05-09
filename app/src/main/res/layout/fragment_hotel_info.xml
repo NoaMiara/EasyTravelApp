@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:outlineSpotShadowColor="@color/btn"
-        android:text="hotel "
+        android:text="Hotel "
         android:textColor="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
