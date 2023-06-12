@@ -1,7 +1,6 @@
 package com.app.easy.travel.add.flight
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -10,6 +9,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.app.easy.travel.R
 import com.app.easy.travel.databinding.ActivityAddFlightBinding
 import com.app.easy.travel.helpers.TRAVEL_URI
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class AddFlightActivity : AppCompatActivity() {
 
@@ -23,6 +23,7 @@ class AddFlightActivity : AppCompatActivity() {
         modeAddMoreForTravel()
         binding = ActivityAddFlightBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
         controller()
     }
 
@@ -32,7 +33,7 @@ class AddFlightActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_arrival,
-                R.id.navigation_departure,
+                //R.id.navigation_departure,
                 R.id.navigation_flight_ticket,
                 R.id.navigation_save_flight
             )
@@ -41,6 +42,10 @@ class AddFlightActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navViewAdd.setupWithNavController(navController)
+
+        binding.toolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
 
     }
 

@@ -27,4 +27,13 @@
     <string name="hotel_info">hotel_info</string>
     <string name="hotel_ticket">hotel_ticket</string>
     <string name="log_out">log out</string>
+    <string name="flight_details">Flight details</string>
+    <string name="destination_airport">Destination airport</string>
+    <string name="departure_date">Departure Date</string>
+    <string name="departure_time">Departure Time</string>
+    <string name="departure_airport">Departure airport</string>
+    <string name="price">Price</string>
+    <string name="save_and_add_more">Save and add more</string>
+    <string name="flight_number">Flight Number :</string>
+    <string name="to_view_the_files_you_uploaded_click_here">To view the files you uploaded click here</string>
 </resources>

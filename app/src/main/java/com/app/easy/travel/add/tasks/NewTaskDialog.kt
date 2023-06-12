@@ -2,15 +2,14 @@ package com.app.easy.travel.add.tasks
 
 import android.os.Bundle
 import android.text.Editable
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.app.easy.travel.databinding.FragmentNewTaskDialogBinding
-
 import com.app.easy.travel.model.Task
-import java.util.*
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import java.util.UUID
 
 class NewTaskDialog(private var task: Task?, private var isActivity: Boolean) : BottomSheetDialogFragment() {
 
@@ -30,11 +29,11 @@ class NewTaskDialog(private var task: Task?, private var isActivity: Boolean) : 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         if (task != null) {
-            binding.taskTitle.text = "Edit Task"
+            binding.taskTitle.title = "Edit Task"
             val editable = Editable.Factory.getInstance()
             binding.edTask.text = editable.newEditable(task?.task)
         } else {
-            binding.taskTitle.text = "New Task"
+            binding.taskTitle.title = "New Task"
         }
 
         taskViewModel = if (isActivity) ViewModelProvider(requireActivity())[TaskViewModel::class.java]

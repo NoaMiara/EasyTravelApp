@@ -6,69 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".add.tasks.AddTaskActivity">
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_task"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline66"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <com.google.android.material.card.MaterialCardView
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/btn_add_task"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:outlineSpotShadowColor="@color/btn"
-        app:cardBackgroundColor="@color/back"
-        app:cardCornerRadius="50dp"
-        app:cardElevation="24dp"
-        app:contentPadding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline67"
-        app:layout_constraintEnd_toStartOf="@+id/guideline68"
-        app:layout_constraintStart_toStartOf="@+id/guideline69"
-        app:layout_constraintTop_toTopOf="@+id/guideline66">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:outlineSpotShadowColor="@color/BLUE_FOR_ITEM"
-            android:text="Add New Task "
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            android:textColor="@color/btn"
-            android:textStyle="bold"
-            app:drawableEndCompat="@drawable/ic_baseline_add_circle_outline_24" />
-    </com.google.android.material.card.MaterialCardView>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline66"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.79616964" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline67"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9042408" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline68"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.92" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline69"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.41" />
+        android:layout_margin="32dp"
+        android:text="Add new task"
+        app:icon="@drawable/ic_baseline_add_circle_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

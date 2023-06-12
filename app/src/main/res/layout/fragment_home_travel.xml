@@ -10,11 +10,6 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:outlineSpotShadowColor="@color/btn"
-        app:cardBackgroundColor="@color/back"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="16dp"
-        app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toTopOf="@+id/guideline76"
         app:layout_constraintEnd_toStartOf="@+id/guideline73"
         app:layout_constraintStart_toStartOf="@+id/guideline72"
@@ -23,9 +18,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-
-            >
+            android:padding="16dp">
 
             <TextView
                 android:id="@+id/tv_date"
@@ -46,7 +39,6 @@
                 android:text="name"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
                 app:layout_constraintBottom_toTopOf="@+id/guideline2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +71,6 @@
         android:id="@+id/flight_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:text="Flight total price:"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -92,7 +83,6 @@
         android:id="@+id/hotel_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:text="Hotel total price:"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -105,7 +95,6 @@
         android:id="@+id/total_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:text="Total price:"
         android:textSize="16sp"
         android:textStyle="bold"

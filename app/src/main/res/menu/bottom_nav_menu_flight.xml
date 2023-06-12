@@ -3,14 +3,8 @@
 
     <item
         android:id="@+id/navigation_arrival"
-        android:color="@color/black"
-        android:icon="@drawable/ic_baseline_flight_land_24"
-        android:title="@string/arrival" />
-
-    <item
-        android:id="@+id/navigation_departure"
         android:icon="@drawable/ic_baseline_flight_takeoff_24"
-        android:title="@string/departure" />
+        android:title="@string/flight_details" />
 
     <item
         android:id="@+id/navigation_flight_ticket"

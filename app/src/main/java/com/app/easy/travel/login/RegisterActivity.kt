@@ -1,18 +1,18 @@
 package com.app.easy.travel.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.app.easy.travel.databinding.ActivityRegisterBinding
+import com.app.easy.travel.helpers.USER
+import com.app.easy.travel.helpers.USERS
 import com.app.easy.travel.model.User
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.app.easy.travel.helpers.USER
-import com.app.easy.travel.helpers.USERS
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
@@ -23,14 +23,24 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        binding.btnRegister.setOnClickListener {
-            createPreferences()
-        }
+        initViews()
 
 
     }
 
+    private fun initViews() {
+        binding.apply {
+            login.setOnClickListener {
+                val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+                startActivity(intent)
+            }
+
+            btnRegister.setOnClickListener {
+                createPreferences()
+            }
+
+        }
+    }
 
     private fun createPreferences() {
         when {
@@ -39,11 +49,13 @@ class RegisterActivity : AppCompatActivity() {
                 "Please write your first name",
                 Toast.LENGTH_SHORT
             ).show()
+
             binding.etTextLastName.text?.isEmpty() == true -> Toast.makeText(
                 this,
                 "Please write your last name",
                 Toast.LENGTH_SHORT
             ).show()
+
             binding.etTextEmail.text?.isEmpty() == true -> Toast.makeText(
                 this,
                 "Please write your email",
@@ -55,6 +67,7 @@ class RegisterActivity : AppCompatActivity() {
                 "Please write your password",
                 Toast.LENGTH_SHORT
             ).show()
+
             else -> {
 
                 checkEmail(
@@ -76,7 +89,7 @@ class RegisterActivity : AppCompatActivity() {
         FirebaseDatabase.getInstance().reference
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    val email = user.email.replace(".","")
+                    val email = user.email.replace(".", "")
                     if (snapshot.child(USERS).child(email).exists()) {
                         Toast.makeText(
                             this@RegisterActivity,
@@ -101,7 +114,7 @@ class RegisterActivity : AppCompatActivity() {
 
         var dataBase = FirebaseDatabase.getInstance().reference.child(USERS)
 
-        var email = user.email.replace(".","")
+        var email = user.email.replace(".", "")
 
         dataBase.child(email).child(USER)
             .setValue(user).addOnSuccessListener {

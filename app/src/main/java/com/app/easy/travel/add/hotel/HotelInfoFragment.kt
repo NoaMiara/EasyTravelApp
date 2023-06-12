@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment
 import com.app.easy.travel.databinding.FragmentHotelInfoBinding
 import com.app.easy.travel.helpers.hotel
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Calendar
 
 
 class HotelInfoFragment : Fragment(), TextWatcher, DatePickerDialog.OnDateSetListener {
@@ -80,10 +80,11 @@ class HotelInfoFragment : Fragment(), TextWatcher, DatePickerDialog.OnDateSetLis
     private fun displayFormattedTime(time: Long, check: String) {
         when (check) {
             "CheckIn" -> {
-                binding.edHotelCheckIn.text = formatTime.format(time)
+                binding.edHotelCheckIn.setText(formatTime.format(time))
             }
+
             "CheckOut" -> {
-                binding.edHotelCheckOut.text = formatTime.format(time)
+                binding.edHotelCheckOut.setText(formatTime.format(time))
 
             }
 
@@ -97,7 +98,7 @@ class HotelInfoFragment : Fragment(), TextWatcher, DatePickerDialog.OnDateSetLis
     }
 
     private fun displayFormattedDate(time: Long) {
-        binding.edHotelDate.text = formatDate.format(time)
+        binding.edHotelDate.setText(formatDate.format(time))
     }
 
 

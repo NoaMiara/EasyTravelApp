@@ -8,84 +8,44 @@
     tools:context=".add.tasks.AddTaskActivity">
 
 
-    <TextView
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/taskTitle"
-        style="@style/TextAppearance.AppCompat.Title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="New Task"
-        android:textSize="32sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline62"
         app:layout_constraintStart_toStartOf="@+id/guideline63"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="New Task"
+        app:titleCentered="true" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cv_task"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:outlineSpotShadowColor="@color/btn"
-        app:cardBackgroundColor="@color/black"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="10dp"
-        app:cardUseCompatPadding="true"
+        android:layout_marginVertical="16dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline70"
         app:layout_constraintEnd_toStartOf="@+id/guideline62"
         app:layout_constraintStart_toStartOf="@+id/guideline63"
         app:layout_constraintTop_toTopOf="@+id/guideline61">
 
-
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_task"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/black"
-            app:boxBackgroundColor="@android:color/white"
-            app:boxStrokeColor="@color/black"
-            app:hintTextAppearance="@color/black"
-            app:hintTextColor="@color/black">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/ed_task"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:backgroundTint="@color/white"
-                android:drawablePadding="16dp"
-                android:hint="TO-DO: "
-                android:inputType="textPersonName"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </com.google.android.material.card.MaterialCardView>
+            android:hint="TO-DO"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.card.MaterialCardView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_save"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:outlineSpotShadowColor="@color/btn"
-        app:cardBackgroundColor="@color/back"
-        app:cardCornerRadius="50dp"
-        app:cardElevation="24dp"
-        app:contentPadding="16dp"
+        android:text="Save"
         app:layout_constraintBottom_toTopOf="@+id/guideline64"
         app:layout_constraintEnd_toStartOf="@+id/guideline62"
         app:layout_constraintStart_toStartOf="@+id/guideline63"
         app:layout_constraintTop_toTopOf="@+id/guideline65"
-        app:layout_constraintVertical_bias="0.565">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:outlineSpotShadowColor="@color/BLUE_FOR_ITEM"
-            android:text="Save"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            android:textColor="@color/btn"
-            android:textStyle="bold"/>
-    </com.google.android.material.card.MaterialCardView>
+        app:layout_constraintVertical_bias="0.565" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline61"

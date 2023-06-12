@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.app.easy.travel.R
-import com.app.easy.travel.model.Travel
 import com.app.easy.travel.main.home.HomeFragment
+import com.app.easy.travel.model.Travel
 
 class TravelRecyclerViewAdapter(
     private val recyclerViewInterface: HomeFragment,
@@ -24,8 +24,8 @@ class TravelRecyclerViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val travelViewModel = TravelList[position]
         // sets the text to the textview from our itemHolder class
-        holder.travelName.text = "My Travel to : ${travelViewModel.name}"
-        holder.date.text = "on ${travelViewModel.date}"
+        holder.travelName.text = "Trip to ${travelViewModel.name}"
+        holder.date.text = "${travelViewModel.date}"
 
     }
 

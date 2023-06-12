@@ -7,9 +7,14 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.app.easy.travel.databinding.FragmentSaveFlightBinding
-import com.app.easy.travel.helpers.*
+import com.app.easy.travel.helpers.USER
+import com.app.easy.travel.helpers.USER_EMAIL
+import com.app.easy.travel.helpers.flight
+import com.app.easy.travel.helpers.imageData
+import com.app.easy.travel.helpers.imagesCurrentTravel
+import com.app.easy.travel.helpers.travel
 import com.app.easy.travel.repository.AddFlightRepository
-import java.util.*
+import java.util.UUID
 
 
 class SaveFlightFragment : Fragment(), View.OnClickListener {
@@ -17,8 +22,6 @@ class SaveFlightFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentSaveFlightBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
     private lateinit var userEmail: String
 
@@ -98,7 +101,6 @@ class SaveFlightFragment : Fragment(), View.OnClickListener {
         addFlightRepository.saveOnStorageFireBase()
     }
 
-
     private fun updateView() {
         if (!flight.arrival.isNullOrEmpty()) {
             _binding?.arrivalFlightSave?.text = "Arrival Flight : ${flight.arrival} "
@@ -114,7 +116,7 @@ class SaveFlightFragment : Fragment(), View.OnClickListener {
 
         }
         if (!flight.departureDate.isNullOrEmpty()) {
-            _binding?.departureFlightDateSave?.text = "Departure Flight : ${flight.departureDate} "
+            _binding?.departureFlightDateSave?.text = "Departure Date : ${flight.departureDate} "
         }
 
 

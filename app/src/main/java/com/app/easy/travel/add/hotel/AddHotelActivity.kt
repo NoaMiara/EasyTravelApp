@@ -1,7 +1,7 @@
 package com.app.easy.travel.add.hotel
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -23,6 +23,7 @@ class AddHotelActivity : AppCompatActivity() {
         modeAddMoreForTravel()
         binding = ActivityAddHotelBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
         controller()
 
 

@@ -10,8 +10,8 @@ import com.app.easy.travel.R
 import com.app.easy.travel.helpers.FLIGHT_URI
 import com.app.easy.travel.helpers.TRAVEL_URI
 import com.app.easy.travel.intarface.RecyclerViewInterface
-import com.app.easy.travel.view.flight.FileFlightActivity
 import com.app.easy.travel.model.Flight
+import com.app.easy.travel.view.flight.FileFlightActivity
 
 class FlightRecyclerViewAdapter(
     private val travelUri: String,
@@ -31,29 +31,29 @@ class FlightRecyclerViewAdapter(
         val flightViewModel = flightList[position]
 
         holder.arrivalFlightDate.text =
-            "Arrival Date: ${flightViewModel.arrivalDate}"
+            "Departure Date: ${flightViewModel.arrivalDate}"
+
         holder.arrivalFlightFrom.text =
-            "Arrival: ${flightViewModel.arrival}"
+            "From : ${flightViewModel.arrival}"
+
         holder.arrivalFlightTime.text =
-            "Arrival Time: ${flightViewModel.arrivalTime}"
-        holder.arrivalFlightAirline.text =
-            "Arrival Airline: ${flightViewModel.arrivalAirline}"
-        holder.arrivalGate.text = "Arrival Gate: ${flightViewModel.arrivalGate}"
+            "Departure Time: ${flightViewModel.arrivalTime}"
 
         holder.departureFlightFrom.text =
-            "Departure: ${flightViewModel.departure}"
+            "To: ${flightViewModel.departure}"
         holder.departureFlightDate.text =
-            "Departure Date: ${flightViewModel.departureDate}"
+            "Arrival Date: ${flightViewModel.departureDate}"
         holder.departureFlightTime.text =
-            "Departure Time: ${flightViewModel.departureTime}"
-        holder.departureFlightAirline.text =
-            "Departure Airline: ${flightViewModel.departureAirline}"
-        holder.departureGate.text = "Departure Gate: ${flightViewModel.departureGate}"
+            "Arrival Time: ${flightViewModel.departureTime}"
 
         holder.flightNumber.text =
             "Flight Number: ${flightViewModel.arrivalFlightNumber}"
 
         holder.ticketPrice.text = "Ticket Price: ${flightViewModel.ticketPrice}"
+
+        holder.flightAirline.text = "Airline : ${flightViewModel.arrivalAirline}"
+
+        holder.gate.text = "Gate : ${flightViewModel.arrivalGate}"
 
         holder.file.setOnClickListener {
 
@@ -91,21 +91,19 @@ class FlightRecyclerViewAdapter(
         val arrivalFlightFrom: TextView = itemView.findViewById(R.id.arrival_flight_from)
         val arrivalFlightDate: TextView = itemView.findViewById(R.id.arrival_flight_date)
         val arrivalFlightTime: TextView = itemView.findViewById(R.id.arrival_flight_time)
-        val arrivalFlightAirline: TextView = itemView.findViewById(R.id.arrival_flight_airline)
-        val arrivalGate: TextView = itemView.findViewById(R.id.arrival_gate)
-
 
         val departureFlightFrom: TextView = itemView.findViewById(R.id.departure_flight_from)
         val departureFlightDate: TextView = itemView.findViewById(R.id.departure_flight_date)
         val departureFlightTime: TextView = itemView.findViewById(R.id.departure_flight_time)
-        val departureFlightAirline: TextView = itemView.findViewById(R.id.departure_flight_airline)
-        val departureGate: TextView = itemView.findViewById(R.id.departure_gate)
 
 
         val flightNumber: TextView = itemView.findViewById(R.id.flight_number)
         val ticketPrice: TextView = itemView.findViewById(R.id.ticket_price)
 
         val file: TextView = itemView.findViewById(R.id.file_view)
+
+        val flightAirline = itemView.findViewById<TextView>(R.id.flight_airline)
+        val gate = itemView.findViewById<TextView>(R.id.gate)
 
 
         init {

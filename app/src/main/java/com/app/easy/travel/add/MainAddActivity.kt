@@ -3,24 +3,33 @@ package com.app.easy.travel.add
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.DatePicker
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.app.easy.travel.add.flight.AddFlightActivity
 import com.app.easy.travel.add.hotel.AddHotelActivity
 import com.app.easy.travel.add.tasks.AddTaskActivity
 import com.app.easy.travel.databinding.ActivityAddBinding
-import com.app.easy.travel.helpers.*
+import com.app.easy.travel.helpers.IMAGES
+import com.app.easy.travel.helpers.TRAVELS
+import com.app.easy.travel.helpers.USER
+import com.app.easy.travel.helpers.USERS
+import com.app.easy.travel.helpers.USER_EMAIL
+import com.app.easy.travel.helpers.flight
+import com.app.easy.travel.helpers.hotel
+import com.app.easy.travel.helpers.imageData
+import com.app.easy.travel.helpers.imagesCurrentTravel
+import com.app.easy.travel.helpers.travel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.ByteArrayOutputStream
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Calendar
+import java.util.UUID
 
 class MainAddActivity : AppCompatActivity(), View.OnClickListener,
     DatePickerDialog.OnDateSetListener {
@@ -49,6 +58,10 @@ class MainAddActivity : AppCompatActivity(), View.OnClickListener,
         binding.btnAddTodo.setOnClickListener(this)
         binding.date.setOnClickListener(this)
 
+        binding.toolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
+
     }
 
     private fun preferencesManager() {
@@ -70,6 +83,7 @@ class MainAddActivity : AppCompatActivity(), View.OnClickListener,
                     startActivity(this)
                 }
             }
+
             binding.date -> {
                 DatePickerDialog(
                     this,
@@ -80,17 +94,20 @@ class MainAddActivity : AppCompatActivity(), View.OnClickListener,
                 )
                     .show()
             }
+
             binding.btnAddHotels -> {
                 Intent(this, AddHotelActivity::class.java).apply {
                     startActivity(this)
                 }
 
             }
+
             binding.btnAddTodo -> {
                 Intent(this, AddTaskActivity::class.java).apply {
                     startActivity(this)
                 }
             }
+
             binding.btnSave -> {
                 if (binding.etLocationName.text.isNullOrEmpty()) {
                     Toast.makeText(this, "Please write down the location name", Toast.LENGTH_LONG)
@@ -157,10 +174,8 @@ class MainAddActivity : AppCompatActivity(), View.OnClickListener,
         displayFormattedDate(calender.timeInMillis)
     }
 
-    private fun displayFormattedDate(time:Long){
-
-        binding.date.text = format.format(time)
-
+    private fun displayFormattedDate(time: Long) {
+        binding.date.setText(format.format(time))
     }
 
 

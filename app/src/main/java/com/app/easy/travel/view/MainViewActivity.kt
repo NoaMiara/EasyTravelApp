@@ -1,7 +1,7 @@
 package com.app.easy.travel.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.*
@@ -22,8 +22,8 @@ class MainViewActivity : AppCompatActivity() {
 
         travelUri = intent.getStringExtra(TRAVEL_URI).toString()
         binding = ActivityViewMainBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
         controller()
 
     }
@@ -44,6 +44,7 @@ class MainViewActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navViewAdd.setupWithNavController(navController)
+        binding.toolbar.setNavigationOnClickListener { onBackPressed() }
 
     }
 

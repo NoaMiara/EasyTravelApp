@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     app:cardCornerRadius="16dp"
     app:cardElevation="8dp"
-    app:cardUseCompatPadding="true"
-
-    >
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,7 +16,7 @@
             android:id="@+id/ticket_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline21"
@@ -44,8 +42,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </com.google.android.material.card.MaterialCardView>

@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".add.hotel.SaveHotelFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:outlineSpotShadowColor="@color/btn"
-        app:cardBackgroundColor="@color/back"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        app:cardUseCompatPadding="true"
+        android:layout_marginHorizontal="16dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline27"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,16 +17,15 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
 
             <TextView
                 android:id="@+id/hotel_name_save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="Hotel Name :"
-                android:textSize="20sp"
+                android:text="Hotel Name"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline41"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -39,25 +35,19 @@
                 android:id="@+id/hotel_location_save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:text="Hotel Location :"
-                android:textSize="20sp"
-
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline51"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline50" />
 
-
             <TextView
                 android:id="@+id/hotel_date_save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="Hotel Date:"
-                android:textSize="20sp"
+                android:text="Hotel Date"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline53"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -109,65 +99,35 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-
-
-
-    <com.google.android.material.card.MaterialCardView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_save_done"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:outlineSpotShadowColor="@color/btn"
-        app:cardBackgroundColor="@color/back"
-        app:cardCornerRadius="50dp"
-        app:cardElevation="24dp"
-        app:contentPadding="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="Save"
         app:layout_constraintBottom_toTopOf="@+id/guideline30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline29">
+        app:layout_constraintTop_toTopOf="@+id/guideline29" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Save and done"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            android:textColor="@color/btn"
-            android:textStyle="bold"
-            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
-    </com.google.android.material.card.MaterialCardView>
-
-
-    <com.google.android.material.card.MaterialCardView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_save_and_more"
-        android:layout_width="0dp"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:outlineSpotShadowColor="@color/btn"
-        app:cardBackgroundColor="@color/back"
-        app:cardCornerRadius="50dp"
-        app:cardElevation="24dp"
-        app:contentPadding="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="Save and add more"
         app:layout_constraintBottom_toTopOf="@+id/guideline31"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline54">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Save and add more hotel"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            android:textColor="@color/btn"
-            android:textStyle="bold"
-            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
-    </com.google.android.material.card.MaterialCardView>
+        app:layout_constraintTop_toTopOf="@+id/guideline54" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_hotel_price"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Price:"
+        android:layout_marginHorizontal="16dp"
+        android:hint="Price"
         app:boxStrokeColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline56"
         app:layout_constraintEnd_toEndOf="parent"
@@ -176,14 +136,11 @@
         app:startIconDrawable="@drawable/ic_baseline_attach_money_24">
 
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/et_text_price"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="@color/white"
-        android:inputType="numberDecimal"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_text_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
