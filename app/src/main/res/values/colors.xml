@@ -86,5 +86,7 @@
     <color name="primary_color">#006D3A</color>
     <color name="primary_container">#99F6B4</color>
 
+    <color name="surface_color">#FBFDF8</color>
+
 
 </resources>

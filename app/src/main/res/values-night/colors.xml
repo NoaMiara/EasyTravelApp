@@ -4,5 +4,7 @@
     <color name="primary_color">#7EDA9A</color>
     <color name="primary_container">#00522B</color>
 
+    <color name="surface_color">#191C19</color>
+
 
 </resources>

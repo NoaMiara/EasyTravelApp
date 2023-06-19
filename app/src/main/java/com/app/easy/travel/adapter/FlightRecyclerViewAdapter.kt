@@ -19,7 +19,6 @@ class FlightRecyclerViewAdapter(
     private val flightList: ArrayList<Flight> = ArrayList()
 ) : RecyclerView.Adapter<FlightRecyclerViewAdapter.ViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.flight_card_view, parent, false)
@@ -122,9 +121,5 @@ class FlightRecyclerViewAdapter(
             val pos = bindingAdapterPosition
             recyclerViewInterface.onItemClick(false, pos)
         }
-
-
     }
-
-
 }

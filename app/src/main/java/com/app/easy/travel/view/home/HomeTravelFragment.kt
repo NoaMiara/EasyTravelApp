@@ -1,13 +1,14 @@
 package com.app.easy.travel.view.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.app.easy.travel.adapter.AttractionsAdapter
 import com.app.easy.travel.databinding.FragmentHomeTravelBinding
 import com.app.easy.travel.helpers.USER
 import com.app.easy.travel.helpers.USER_EMAIL
@@ -19,6 +20,8 @@ class HomeTravelFragment : Fragment() {
     private lateinit var viewModel: HomeTravelViewModel
     private lateinit var userEmail: String
     private lateinit var travelUri: String
+    private var destination: String = ""
+    private val adapter: AttractionsAdapter by lazy { AttractionsAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +31,7 @@ class HomeTravelFragment : Fragment() {
         travelUri = (activity as MainViewActivity?)?.getTravelUri().toString()
         viewModel = ViewModelProvider(this)[HomeTravelViewModel::class.java]
         _binding = FragmentHomeTravelBinding.inflate(inflater, container, false)
+        binding.recyclerViewAttractions.adapter = adapter
         return binding.root
     }
 
@@ -36,8 +40,6 @@ class HomeTravelFragment : Fragment() {
         preferencesManager()
         viewModel.loadTravel(userEmail,travelUri)
         observeManager()
-
-
     }
 
     private fun preferencesManager() {
@@ -47,19 +49,32 @@ class HomeTravelFragment : Fragment() {
     }
 
     private fun observeManager() {
-        viewModel.myTravelOb.observe(viewLifecycleOwner, Observer {
-            binding.tvName.text="Trip to ${it.name}"
-            binding.tvDate.text="on ${it.date}"
-        })
-        viewModel.flightTotalPrice.observe(viewLifecycleOwner, Observer {
-            binding.flightPrice.text="Flights total price: $it$"
-        })
-        viewModel.hotelTotalPrice.observe(viewLifecycleOwner, Observer {
-            binding.hotelPrice.text= "Hotels total price: $it$"
-        })
-        viewModel.totalPrice.observe(viewLifecycleOwner, Observer {
-            binding.totalPrice.text="Total price: $it$"
-        })    }
+        viewModel.myTravelOb.observe(viewLifecycleOwner) {
+            destination = it.name.toString()
+            if (destination.isNotEmpty()) {
+                Log.d("Places", "Destination ==> $destination")
+                viewModel.getAttractions(destination)
+            }
+            binding.tvName.text = "Trip to ${it.name}"
+            binding.tvDate.text = "on ${it.date}"
+        }
+        viewModel.flightTotalPrice.observe(viewLifecycleOwner) {
+            binding.flightPrice.text = "Flights total price: $it$"
+        }
+        viewModel.hotelTotalPrice.observe(viewLifecycleOwner) {
+            binding.hotelPrice.text = "Hotels total price: $it$"
+        }
+        viewModel.totalPrice.observe(viewLifecycleOwner) {
+            binding.totalPrice.text = "Total price: $it$"
+        }
+
+        viewModel.attractions.observe(viewLifecycleOwner) {
+            Log.d("Places", "Places observed ==> ${it?.size}")
+            adapter.submitList(it)
+            Log.d("Places", "Adapter item count ==> ${adapter.itemCount}")
+            binding.recyclerViewAttractions.adapter = adapter
+        }
+    }
 
 
     override fun onDestroyView() {

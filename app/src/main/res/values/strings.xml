@@ -36,4 +36,5 @@
     <string name="save_and_add_more">Save and add more</string>
     <string name="flight_number">Flight Number :</string>
     <string name="to_view_the_files_you_uploaded_click_here">To view the files you uploaded click here</string>
+    <string name="flight_total_price">Flight total price:</string>
 </resources>

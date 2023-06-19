@@ -4,8 +4,11 @@ import androidx.lifecycle.MutableLiveData
 import com.app.easy.travel.helpers.TRAVELS
 import com.app.easy.travel.helpers.USERS
 import com.app.easy.travel.model.Travel
-import com.google.firebase.database.*
-import java.lang.Exception
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class HomeRepository {
 
@@ -79,5 +82,9 @@ class HomeRepository {
 
     }
 
+    fun fetchPopularAttractions(
+        locationName: String
+    ) {
 
+    }
 }
