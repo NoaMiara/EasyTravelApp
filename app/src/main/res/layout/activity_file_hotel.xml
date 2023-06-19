@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.hotel.FileHotelActivity">
+    tools:context=".ui.hotel.FileHotelActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_file_hotel"

@@ -16,7 +16,5 @@ data class Travel(
         flights.clear()
         hotels.clear()
         tasks.clear()
-
-
     }
 }

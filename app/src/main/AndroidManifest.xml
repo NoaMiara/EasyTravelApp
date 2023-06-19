@@ -33,7 +33,7 @@
             android:name="com.app.easy.travel.add.tasks.AddTaskActivity"
             android:exported="false" />
         <activity
-            android:name="com.app.easy.travel.view.hotel.FileHotelActivity"
+            android:name="com.app.easy.travel.ui.hotel.FileHotelActivity"
             android:exported="false" />
         <activity
             android:name="com.app.easy.travel.add.hotel.AddHotelActivity"
@@ -45,10 +45,10 @@
             android:name=".login.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name="com.app.easy.travel.view.flight.FileFlightActivity"
+            android:name="com.app.easy.travel.ui.flight.FileFlightActivity"
             android:exported="false" />
         <activity
-            android:name="com.app.easy.travel.view.MainViewActivity"
+            android:name="com.app.easy.travel.ui.MainViewActivity"
             android:exported="true" />
         <activity
             android:name="com.app.easy.travel.add.flight.AddFlightActivity"

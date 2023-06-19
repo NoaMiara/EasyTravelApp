@@ -7,30 +7,30 @@
     >
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.app.easy.travel.view.home.HomeTravelFragment"
+        android:name="com.app.easy.travel.ui.home.HomeTravelFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home_travel" />
     <fragment
         android:id="@+id/navigation_flight"
-        android:name="com.app.easy.travel.view.flight.FlightFragment"
+        android:name="com.app.easy.travel.ui.flight.FlightFragment"
         android:label="Flight"
         tools:layout="@layout/fragment_flight" />
 
     <fragment
         android:id="@+id/navigation_hotels"
-        android:name="com.app.easy.travel.view.hotel.HotelFragment"
+        android:name="com.app.easy.travel.ui.hotel.HotelFragment"
         android:label="Hotel"
         tools:layout="@layout/fragment_hotel" />
 
     <fragment
         android:id="@+id/navigation_camera"
-        android:name="com.app.easy.travel.view.camera.CameraFragment"
+        android:name="com.app.easy.travel.ui.camera.CameraFragment"
         android:label="Camera"
         tools:layout="@layout/fragment_camera" />
 
     <fragment
         android:id="@+id/navigation_to_do_list"
-        android:name="com.app.easy.travel.view.toDo.ToDoFragment"
+        android:name="com.app.easy.travel.ui.toDo.ToDoFragment"
         android:label="To Do"
         tools:layout="@layout/fragment_to_do" />
 
