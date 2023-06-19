@@ -1,10 +1,10 @@
-package com.app.easy.travel.view.hotel
+package com.app.easy.travel.ui.hotel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.app.easy.travel.repository.FileHotelRepository
 import com.app.easy.travel.model.Image
+import com.app.easy.travel.repository.FileHotelRepository
 
 class FileHotelViewModel: ViewModel() {
 

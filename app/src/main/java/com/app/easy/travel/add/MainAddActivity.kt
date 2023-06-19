@@ -22,6 +22,8 @@ import com.app.easy.travel.helpers.hotel
 import com.app.easy.travel.helpers.imageData
 import com.app.easy.travel.helpers.imagesCurrentTravel
 import com.app.easy.travel.helpers.travel
+import com.app.easy.travel.network.PLACES_API_KEY
+import com.google.android.libraries.places.api.Places
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -40,6 +42,8 @@ class MainAddActivity : AppCompatActivity(), View.OnClickListener,
     private lateinit var userEmail: String
     private val calender = Calendar.getInstance()
     private val format = SimpleDateFormat("dd/MM/yyyy")
+    private var isAutocompleteVisible = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         actionBarManager()
@@ -47,8 +51,7 @@ class MainAddActivity : AppCompatActivity(), View.OnClickListener,
         binding = ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setOnClick()
-
-
+        Places.initialize(applicationContext, PLACES_API_KEY)
     }
 
     private fun setOnClick() {

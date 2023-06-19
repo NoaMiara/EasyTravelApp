@@ -1,25 +1,25 @@
-package com.app.easy.travel.view.toDo
+package com.app.easy.travel.ui.toDo
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.app.easy.travel.intarface.TaskItemClick
-import com.app.easy.travel.helpers.USER
-import com.app.easy.travel.helpers.USER_EMAIL
 import com.app.easy.travel.adapter.TaskRecyclerViewAdapter
 import com.app.easy.travel.add.tasks.NewTaskDialog
 import com.app.easy.travel.add.tasks.TaskViewModel
 import com.app.easy.travel.databinding.FragmentToDoBinding
+import com.app.easy.travel.helpers.USER
+import com.app.easy.travel.helpers.USER_EMAIL
+import com.app.easy.travel.intarface.TaskItemClick
 import com.app.easy.travel.model.Task
-import com.app.easy.travel.view.MainViewActivity
+import com.app.easy.travel.ui.MainViewActivity
 
 class ToDoFragment : Fragment(), TaskItemClick {
 

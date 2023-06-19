@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.app.easy.travel.view.MainViewActivity
+import com.app.easy.travel.ui.MainViewActivity
 import com.app.easy.travel.adapter.TravelRecyclerViewAdapter
 import com.app.easy.travel.databinding.FragmentHomeBinding
 import com.app.easy.travel.helpers.TRAVEL_URI

@@ -11,7 +11,7 @@ import com.app.easy.travel.helpers.FLIGHT_URI
 import com.app.easy.travel.helpers.TRAVEL_URI
 import com.app.easy.travel.intarface.RecyclerViewInterface
 import com.app.easy.travel.model.Flight
-import com.app.easy.travel.view.flight.FileFlightActivity
+import com.app.easy.travel.ui.flight.FileFlightActivity
 
 class FlightRecyclerViewAdapter(
     private val travelUri: String,

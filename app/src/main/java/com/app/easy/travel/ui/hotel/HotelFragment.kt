@@ -1,25 +1,25 @@
-package com.app.easy.travel.view.hotel
+package com.app.easy.travel.ui.hotel
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.app.easy.travel.intarface.RecyclerViewInterface
-import com.app.easy.travel.helpers.TRAVEL_URI
-import com.app.easy.travel.helpers.USER
-import com.app.easy.travel.helpers.USER_EMAIL
 import com.app.easy.travel.adapter.HotelRecyclerViewAdapter
 import com.app.easy.travel.add.hotel.AddHotelActivity
 import com.app.easy.travel.databinding.FragmentHotelBinding
-import com.app.easy.travel.view.MainViewActivity
+import com.app.easy.travel.helpers.TRAVEL_URI
+import com.app.easy.travel.helpers.USER
+import com.app.easy.travel.helpers.USER_EMAIL
+import com.app.easy.travel.intarface.RecyclerViewInterface
+import com.app.easy.travel.ui.MainViewActivity
 
 class HotelFragment : Fragment(), RecyclerViewInterface {
 

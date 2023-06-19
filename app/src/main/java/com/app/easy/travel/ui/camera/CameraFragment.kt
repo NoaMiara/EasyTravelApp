@@ -1,4 +1,4 @@
-package com.app.easy.travel.view.camera
+package com.app.easy.travel.ui.camera
 
 import android.Manifest
 import android.app.Activity
@@ -11,30 +11,33 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.provider.Settings
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.easy.travel.adapter.ImageRecyclerViewAdapter
 import com.app.easy.travel.databinding.FragmentCameraBinding
-import com.app.easy.travel.databinding.FragmentHotelTicketBinding
-import com.app.easy.travel.helpers.*
+import com.app.easy.travel.helpers.CAMERA
+import com.app.easy.travel.helpers.GALLERY
+import com.app.easy.travel.helpers.IMAGE_DIRECTORY
+import com.app.easy.travel.helpers.hotel
+import com.app.easy.travel.helpers.imageData
 import com.app.easy.travel.intarface.RecyclerViewInterface
 import com.app.easy.travel.model.Image
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import java.io.File
 import java.io.FileOutputStream
-import com.karumi.dexter.listener.PermissionRequest
 import java.io.IOException
 import java.io.OutputStream
-import java.util.*
+import java.util.UUID
 
 class CameraFragment : Fragment(), RecyclerViewInterface {
 

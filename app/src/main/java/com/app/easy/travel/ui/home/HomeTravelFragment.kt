@@ -1,4 +1,4 @@
-package com.app.easy.travel.view.home
+package com.app.easy.travel.ui.home
 
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +12,7 @@ import com.app.easy.travel.adapter.AttractionsAdapter
 import com.app.easy.travel.databinding.FragmentHomeTravelBinding
 import com.app.easy.travel.helpers.USER
 import com.app.easy.travel.helpers.USER_EMAIL
-import com.app.easy.travel.view.MainViewActivity
+import com.app.easy.travel.ui.MainViewActivity
 
 class HomeTravelFragment : Fragment() {
     private var _binding: FragmentHomeTravelBinding? = null

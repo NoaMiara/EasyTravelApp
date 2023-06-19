@@ -1,10 +1,10 @@
-package com.app.easy.travel.view.flight
+package com.app.easy.travel.ui.flight
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.app.easy.travel.repository.FileFlightRepository
 import com.app.easy.travel.model.Image
+import com.app.easy.travel.repository.FileFlightRepository
 
 class FileFlightViewModel :ViewModel() {
     private val repository: FileFlightRepository = FileFlightRepository()

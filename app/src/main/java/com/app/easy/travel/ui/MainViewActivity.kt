@@ -1,4 +1,4 @@
-package com.app.easy.travel.view
+package com.app.easy.travel.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

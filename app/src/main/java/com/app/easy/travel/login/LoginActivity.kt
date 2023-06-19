@@ -1,21 +1,27 @@
 package com.app.easy.travel.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.app.easy.travel.databinding.ActivityLoginBinding
-import com.app.easy.travel.helpers.*
+import com.app.easy.travel.helpers.FIRST_TIME
+import com.app.easy.travel.helpers.USER
+import com.app.easy.travel.helpers.USERS
+import com.app.easy.travel.helpers.USER_EMAIL
+import com.app.easy.travel.helpers.USER_FIRST_NAME
+import com.app.easy.travel.helpers.USER_LAST_NAME
+import com.app.easy.travel.helpers.USER_PASSWORD
+import com.app.easy.travel.main.HomeActivity
 import com.app.easy.travel.model.User
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.app.easy.travel.main.HomeActivity
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
+    lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -105,7 +111,7 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    private fun createPreferences(user: User) {
+    fun createPreferences(user: User) {
         val preferences = getSharedPreferences(USER, MODE_PRIVATE)
         preferences.edit().putString(USER_FIRST_NAME, user.firstName).commit()
         preferences.edit().putString(USER_LAST_NAME, user.lastName).commit()
@@ -117,7 +123,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun finishLogin() {
+    fun finishLogin() {
         Intent(this, HomeActivity::class.java).apply {
             startActivity(this)
             finish()

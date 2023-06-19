@@ -1,4 +1,4 @@
-package com.app.easy.travel.view.home
+package com.app.easy.travel.ui.home
 
 import android.util.Log
 import androidx.lifecycle.LiveData

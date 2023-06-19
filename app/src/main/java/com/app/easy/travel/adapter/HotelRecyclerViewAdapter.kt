@@ -11,7 +11,7 @@ import com.app.easy.travel.helpers.HOTEL_URI
 import com.app.easy.travel.helpers.TRAVEL_URI
 import com.app.easy.travel.intarface.RecyclerViewInterface
 import com.app.easy.travel.model.Hotel
-import com.app.easy.travel.view.hotel.FileHotelActivity
+import com.app.easy.travel.ui.hotel.FileHotelActivity
 
 class HotelRecyclerViewAdapter(private val travelUri: String,
                                private val recyclerViewInterface: RecyclerViewInterface,

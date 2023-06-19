@@ -1,7 +1,5 @@
 package com.app.easy.travel.model
 
-import android.util.Log
-
 data class Flight(
     var pid: String? = "",
 
@@ -57,8 +55,6 @@ data class Flight(
 
             }
         }
-        Log.d("copy", newFile.toString())
-
         return newFile
     }
 

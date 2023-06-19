@@ -8,7 +8,7 @@
  * in the hotel data and update the UI accordingly.
  */
 
-package com.app.easy.travel.view.hotel
+package com.app.easy.travel.ui.hotel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

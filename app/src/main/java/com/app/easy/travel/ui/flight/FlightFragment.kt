@@ -1,4 +1,4 @@
-package com.app.easy.travel.view.flight
+package com.app.easy.travel.ui.flight
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,14 +12,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.app.easy.travel.intarface.RecyclerViewInterface
+import com.app.easy.travel.adapter.FlightRecyclerViewAdapter
+import com.app.easy.travel.add.flight.AddFlightActivity
+import com.app.easy.travel.databinding.FragmentFlightBinding
 import com.app.easy.travel.helpers.TRAVEL_URI
 import com.app.easy.travel.helpers.USER
 import com.app.easy.travel.helpers.USER_EMAIL
-import com.app.easy.travel.add.flight.AddFlightActivity
-import com.app.easy.travel.view.MainViewActivity
-import com.app.easy.travel.adapter.FlightRecyclerViewAdapter
-import com.app.easy.travel.databinding.FragmentFlightBinding
+import com.app.easy.travel.intarface.RecyclerViewInterface
+import com.app.easy.travel.ui.MainViewActivity
 
 class FlightFragment : Fragment(), RecyclerViewInterface {
 

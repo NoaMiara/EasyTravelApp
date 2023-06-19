@@ -1,4 +1,4 @@
-package com.app.easy.travel.view.flight
+package com.app.easy.travel.ui.flight
 
 import android.os.Bundle
 import android.util.Log
@@ -8,12 +8,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.app.easy.travel.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.android.synthetic.main.fragment_flight_details.*
-import okhttp3.*
+import kotlinx.android.synthetic.main.fragment_flight_details.flight_details_text
+import kotlinx.android.synthetic.main.fragment_flight_details.flight_number_input
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.Response
 import org.json.JSONObject
 import java.io.IOException
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 
 class FlightDetailsFragment : Fragment() {
 
