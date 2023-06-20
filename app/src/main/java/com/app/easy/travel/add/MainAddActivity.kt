@@ -1,12 +1,15 @@
 package com.app.easy.travel.add
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.DatePicker
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.app.easy.travel.add.flight.AddFlightActivity
 import com.app.easy.travel.add.hotel.AddHotelActivity
@@ -24,6 +27,9 @@ import com.app.easy.travel.helpers.imagesCurrentTravel
 import com.app.easy.travel.helpers.travel
 import com.app.easy.travel.network.PLACES_API_KEY
 import com.google.android.libraries.places.api.Places
+import com.google.android.libraries.places.api.model.Place
+import com.google.android.libraries.places.widget.Autocomplete
+import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -42,7 +48,6 @@ class MainAddActivity : AppCompatActivity(), View.OnClickListener,
     private lateinit var userEmail: String
     private val calender = Calendar.getInstance()
     private val format = SimpleDateFormat("dd/MM/yyyy")
-    private var isAutocompleteVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,6 +69,28 @@ class MainAddActivity : AppCompatActivity(), View.OnClickListener,
         binding.toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
+        binding.etLocationName.setOnClickListener {
+            val fields = listOf(Place.Field.ID, Place.Field.NAME)
+            val intent = Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields)
+                .build(this@MainAddActivity)
+            startAutocomplete.launch(intent)
+        }
+
+    }
+
+    private val startAutocomplete =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val intent = result.data
+                if (intent != null) {
+                    val placeName = Autocomplete.getPlaceFromIntent(intent).name
+                    binding.etLocationName.setText(placeName)
+                }
+
+            } else if (result.resultCode == Activity.RESULT_CANCELED) {
+                Log.d("PlacesAutocomplete", "User cancelled the activity.")
+            }
+
 
     }
 
