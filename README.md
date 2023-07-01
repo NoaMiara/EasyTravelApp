@@ -59,14 +59,14 @@ To run the Easy Travel app, follow these steps:
 2. Clone the Easy Travel repository from GitHub.
 3. Open the project in Android Studio.
 4. Build and run the app on an Android device or emulator.
-   
-## UML
-
 
 ## Video
 
+https://www.youtube.com/watch?v=pQRueLRsMV4
+
 ## Developer
 
+Noa Miara Levi
 ## Conclusion
 
 Easy Travel is a user-friendly and convenient app that helps travelers organize their trip details, providing peace of mind and a better vacation experience. The use of Kotlin and the MVVM architecture makes the app easy to maintain and modify, and the integration with Firebase ensures reliable data storage and synchronization.
